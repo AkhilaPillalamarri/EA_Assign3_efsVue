@@ -115,39 +115,4 @@ const API_URL = 'https://akhilap.pythonanywhere.com/';
         const url = `${API_URL}/api/register/`;
         return axios.post(url, user);
       }
-      getFund(param_pk) {
-        const url = `${API_URL}/api/funds/${param_pk}`;
-        let jwtToken = localStorage.getItem('token');
-        console.log(":::jwtToken:::::"+jwtToken);
-        const headers = {Authorization: `jwt ${jwtToken}`};
-        return axios.get(url, {headers: headers});
       }
-
-      getFundList() {
-        const url = `${API_URL}/api/funds/`;
-        let jwtToken = localStorage.getItem('token');
-        console.log(jwtToken)
-        console.log(":::jwtToken:::::" + jwtToken);
-        const headers = {Authorization: `jwt ${jwtToken}`};
-        return axios.get(url, {headers: headers});
-      }
-      addNewFund(fund){
-        const url = `${API_URL}/api/funds/`;
-        let jwtToken = localStorage.getItem('token');
-        const headers = {Authorization: `jwt ${jwtToken}`};
-        return axios.post(url, fund, {headers: headers});
-      }
-
-      updateFund(fund){
-        const url = `${API_URL}/api/funds/${fund.id}`;
-        let jwtToken = localStorage.getItem('token');
-        const headers = {Authorization: `jwt ${jwtToken}`};
-        return axios.put(url, fund, {headers: headers});
-      }
-      deleteFund(fund_Pk){
-        const url = `${API_URL}/api/funds/${fund_Pk}`;
-        let jwtToken = localStorage.getItem('token');
-        const headers = {Authorization: `jwt ${jwtToken}`};
-        return axios.delete(url, {headers: headers});
-      }
-    }

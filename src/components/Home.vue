@@ -60,19 +60,7 @@
                     </v-card-actions>
                   </v-card>
                 </v-col>
-                <v-col class="col-sm-3">
-                  <v-card>
-                    <v-img :src="require('@/assets/images/funds.jpg')" height="200px"></v-img>
-                    <v-card-text>
-                      <div class="blue--text text-h6">
-                        Funds
-                      </div>
-                    </v-card-text>
-                    <v-card-actions>
-                      <v-btn text color="orange" @click="viewFunds">View Details</v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-col>
+
               </v-row>
             </v-container>
           </v-card>
@@ -101,9 +89,7 @@ export default {
     viewStocks(){
       router.push('/stock-list');
     },
-    viewFunds(){
-      router.push('/fund-list');
-    },
+
     getUser() {
       if (localStorage.getItem("isAuthenticates")
       && JSON.parse(localStorage.getItem("isAuthenticates")) === true) {
